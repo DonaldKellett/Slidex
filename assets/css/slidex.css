@@ -1,0 +1,35 @@
+/*
+  slidex.css
+  Slidex's Main Stylesheet
+  Note: Please do not edit this stylesheet.  Override this stylesheet with your own custom stylesheet.  Some CSS features can also be set on slidex.js.
+  (c) Donald Leung.  All rights reserved.
+  MIT Licensed
+*/
+
+html, body {
+  height: 100%;
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+#slideScroll {
+  height: 5%;
+  text-align: center;
+}
+
+#slideContent {
+  height: 80%;
+}
+
+#slideNumber {
+  height: 5%;
+  text-align: center;
+  font-size: smaller;
+}
+
+#copyright {
+  height: 10%;
+  text-align: center;
+}
