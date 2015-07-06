@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!--
+  Slidex by Donald Leung (http://donaldkellett.github.io)
+  A customizable-to-the-core template for Powerpoint-style presentations
+  (c) Donald Leung.  All rights reserved.
+  MIT Licensed
+-->
 <html id="file">
   <head>
     <meta charset="utf-8" />
@@ -8,12 +14,15 @@
     <link rel="stylesheet" type="text/css" href="assets/css/slidex.css" />
     <script src="assets/js/slidex.js"></script>
 
+    <!-- Demo Assets (delete them if you do not find them useful) -->
+    <script src="assets/js/demo.js"></script>
+
     <!-- Imported Assets -->
     <link rel="stylesheet" type="text/css" href="assets/imported/font-awesome/css/font-awesome.min.css" />
   </head>
   <body id="body">
 
-    <!-- Slide Window (DO NOT EDIT - go to *filepath* to edit slides) -->
+    <!-- Slide Window (DO NOT EDIT - go to "Slide Content" section to edit slides) -->
     <div id="slideWindow">
       <h2>Filler Content</h2>
       <p>If you have created slides, you should not be seeing this message.</p>
@@ -26,7 +35,7 @@
 
     <!-- Arrows to navigate through slides (DO NOT EDIT) -->
     <div id="slideScroll">
-      <p><a href="javascript:void(0)" title="Previous Slide"><span class="fa fa-arrow-left" id="previousSlide"></span></a> Slide <span id="currentSlide">1</span> of <span id="totalSlides">99</span> <a href="javascript:void(0)" title="Next Slide"><span class="fa fa-arrow-right" id="nextSlide"></span></a></p>
+      <p><a href="javascript:void(0)" title="Previous Slide" onclick="slidex.previousSlide()"><span class="fa fa-arrow-left" id="previousSlide"></span></a> Slide <span id="currentSlide">1</span> of <span id="totalSlides">99</span> <a href="javascript:void(0)" title="Next Slide" onclick="slidex.nextSlide()"><span class="fa fa-arrow-right" id="nextSlide"></span></a></p>
     </div>
 
     <!-- Copyright - Feel free to edit the copyright notice below! -->
@@ -79,28 +88,84 @@
 
     <div id="slideContent">
       <div class="slide" id="slide1">
-        <!-- Content goes here -->
+        <h1 id="presentationTitle">Slidex</h1>
+        <h2 id="presentationSummary">A custom presentation tool written purely in <b>HTML5, CSS3 and Javascript</b></h2>
+        <h3 id="presentationAuthor">Proudly presented to you by <a href="http://donaldkellett.github.io" target="_blank" id="demoAttribution">Donald Leung</a></h3>
       </div>
       <div class="slide" id="slide2">
-        <!-- Content goes here -->
+        <h2 class="slideTitle">What is Slidex?</h2>
+        <p>Slidex is <strong>the best alternative</strong> to commonly used presentation-making software such as Microsoft's Microsoft Powerpoint and Google Drive's Presentation tool.  Features include:</p>
+        <ul>
+          <li>High Flexibility</li>
+          <li>High Customizability</li>
+          <li>User Friendly</li>
+          <li>Easy Navigation</li>
+          <li>Developer Friendly</li>
+        </ul>
+        <p>... and a lot, lot more.</p>
+        <p>The fact that <strong>Slidex</strong> is built purely on <strong>HTML5, CSS3 and Javascript</strong> means that it is customizable to the core.  Want images with pretty, colored borders?  No problem!  Just delve deep into the CSS and set the image's <code>border</code> property to something like <code>border: 5px solid #5a5a5a</code>, and ... ta da!  You've just created beautiful borders around the image!</p>
+        <p>It also means that you can do a lot more on Slidex than you can do on Powerpoints, Google Presentations or <strong>even Prezi</strong>.  For example, on Presentations like Microsoft Powerpoint or Prezi, it is next to impossible to place a button on your presentation.  However, since Slidex is purely <strong>HTML5, CSS3 and Javascript</strong>, you can easily customize your own button and even how it behaves!</p>
+        <p>
+          <a href="#" class="button">Default</a> <a href="#" class="button-special">Special</a>
+        </p>
+        <p>Here are actual buttons that actually work.</p>
+        <p>
+          <a href="https://google.com" class="button" target="_blank">Visit Google on a new tab</a> <a href="javascript:void(0)" class="button-special" onclick="alert('There are a total of ' + slidex.totalSlideNumber + ' slides in this presentation.');">How many slides are there?</a>
+        </p>
       </div>
       <div class="slide" id="slide3">
-        <!-- Content goes here -->
+        <h2 class="majorTitle">Behavior Control on <strong>Slidex</strong></h2>
       </div>
       <div class="slide" id="slide4">
-        <!-- Content goes here -->
+        <h2 class="slideTitle">Controlling Behavior of Elements in Slidex</h2>
+        <p>Since <strong>Slidex</strong> is written in pure <strong>HTML5, CSS3 and Javascript</strong>, as long as you know how to code in the three languages just mentioned, you can make each and every slide do whatever you want!  See the example below.</p>
+        <div id="demoQuiz">
+          <h3>Knowledge Quiz</h3>
+          <p>Try answering the questions below!  If you can answer all three questions, you are a superstar!</p>
+          <form>
+            <p>What is the square root of onions?</p>
+            <input type="text" id="question1" placeholder="Enter your answer here ... " />
+            <p>What is the term that describes the movement of water molecules from a high water potential to a low water potential down a water potential gradient through a partially permeable membrane?</p>
+            <input type="text" id="question2" placeholder="Hint: It's about Biology :p" />
+            <p>If 1=4, 2=8 and 3=12, what is 4 equal to?</p>
+            <input type="text" id="question3" placeholder="Enter a number here ... " />
+          </form>
+          <p>
+            <a href="javascript:void(0)" onclick="demo.quiz.submit()" class="button-special">Submit</a>
+          </p>
+        </div>
       </div>
       <div class="slide" id="slide5">
-        <!-- Content goes here -->
+        <h2 class="slideTitle">Lorem ipsum dolore</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
       <div class="slide" id="slide6">
-        <!-- Content goes here -->
+        <h2 class="slideTitle">Lorem ipsum dolore</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
       <div class="slide" id="slide7">
-        <!-- Content goes here -->
+        <h2 class="slideTitle">Lorem ipsum dolore</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
       <div class="slide" id="slide8">
-        <!-- Content goes here -->
+        <h2 class="slideTitle">Lorem ipsum dolore</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
       <div class="slide" id="slide9">
         <!-- Content goes here -->

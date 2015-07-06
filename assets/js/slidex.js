@@ -42,11 +42,38 @@ var slidex = {
       }
     }
     slidex.currentSlideNumber = 1; // Always start at first slide
+    slidex.currentSlideId = "slide" + slidex.currentSlideNumber;
     slidex.totalSlideNumber = document.getElementById("slideContent").getElementsByClassName("slide").length; // Record total number of slides
     document.getElementById("currentSlide").innerHTML = slidex.currentSlideNumber;
     document.getElementById("totalSlides").innerHTML = slidex.totalSlideNumber;
+    document.getElementById("slideWindow").innerHTML = document.getElementById(slidex.currentSlideId).innerHTML;
+  },
+  previousSlide: function() {
+    if (slidex.currentSlideNumber <= 1) {
+      // If you do not want an alert message to pop up everytime you overclick the "Previous Slide" button, feel free to uncomment the "console.log" statement and comment out the "alert" statement
+      // console.log("This is the first slide.");
+      alert("This is the first slide.");
+    } else {
+      slidex.currentSlideNumber--;
+      slidex.currentSlideId = "slide" + slidex.currentSlideNumber;
+      document.getElementById("slideWindow").innerHTML = document.getElementById(slidex.currentSlideId).innerHTML;
+      document.getElementById("currentSlide").innerHTML = slidex.currentSlideNumber;
+    }
+  },
+  nextSlide: function() {
+    if (slidex.currentSlideNumber >= slidex.totalSlideNumber) {
+      // If you do not want an alert message to pop up everytime you overclick the "Next Slide" button, feel free to uncomment the "console.log" statement and comment out the "alert" statement
+      // console.log("This is the last slide.");
+      alert("This is the last slide.");
+    } else {
+      slidex.currentSlideNumber++;
+      slidex.currentSlideId = "slide" + slidex.currentSlideNumber;
+      document.getElementById("slideWindow").innerHTML = document.getElementById(slidex.currentSlideId).innerHTML;
+      document.getElementById("currentSlide").innerHTML = slidex.currentSlideNumber;
+    }
   },
   currentSlideNumber: null,
   totalSlideNumber: null,
+  currentSlideId: null,
   currentSlideContent: "" // Empty string
 };
