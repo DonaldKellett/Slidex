@@ -6,13 +6,47 @@
   MIT Licensed
 */
 
-
-// File Test (for developer use only) - you can safely delete the commented out code below
-/*
-function test() {
-  alert("Hello World!");
-}
-*/
-
-// Slidex Object
-var slidex = {};
+// Slidex Object - DO NOT EDIT
+var slidex = {
+  init: function(settings) {
+    if (!settings) {
+      // Use default settings
+      document.getElementById("body").style.color = "black";
+      document.getElementById("previousSlide").style.color = "black";
+      document.getElementById("nextSlide").style.color = "black";
+      document.getElementById("body").style.backgroundColor = "white";
+      document.getElementById("file").style.backgroundColor = "white";
+      document.getElementById("body").style.fontFamily = "sans-serif";
+    } else {
+      // Use custom settings according to what developer has entered
+      if (!settings.color) {
+        document.getElementById("body").style.color = "black";
+        document.getElementById("previousSlide").style.color = "black";
+        document.getElementById("nextSlide").style.color = "black";
+      } else {
+        document.getElementById("body").style.color = settings.color;
+        document.getElementById("previousSlide").style.color = settings.color;
+        document.getElementById("nextSlide").style.color = settings.color;
+      }
+      if (!settings.backgroundColor) {
+        document.getElementById("body").style.backgroundColor = "white";
+        document.getElementById("file").style.backgroundColor = "white";
+      } else {
+        document.getElementById("body").style.backgroundColor = settings.backgroundColor;
+        document.getElementById("file").style.backgroundColor = settings.backgroundColor;
+      }
+      if (!settings.fontFamily) {
+        document.getElementById("body").style.fontFamily = "sans-serif";
+      } else {
+        document.getElementById("body").style.fontFamily = settings.fontFamily;
+      }
+    }
+    slidex.currentSlideNumber = 1; // Always start at first slide
+    slidex.totalSlideNumber = document.getElementById("slideContent").getElementsByClassName("slide").length; // Record total number of slides
+    document.getElementById("currentSlide").innerHTML = slidex.currentSlideNumber;
+    document.getElementById("totalSlides").innerHTML = slidex.totalSlideNumber;
+  },
+  currentSlideNumber: null,
+  totalSlideNumber: null,
+  currentSlideContent: "" // Empty string
+};
