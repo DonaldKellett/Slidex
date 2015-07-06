@@ -29,6 +29,11 @@
   border: 2px solid #444;
 }
 
+#demoPresentationTitle {
+  font-size: 5em;
+  text-align: center;
+}
+
 /* Basic Styles (DO NOT EDIT UNLESS TOLD OTHERWISE) */
 
 html, body {
@@ -95,14 +100,6 @@ html, body {
 
 /* Pre-styled Elements - DO NOT EDIT THESE - OVERRIDE THEM WITH YOUR OWN CUSTOM STYLESHEET */
 
-code {
-  padding: 2px;
-  background-color: #444;
-  font-family: "Courier New", monospace;
-  border-radius: 5px;
-  border: 1px solid #666;
-}
-
 .button {
   padding: 10px 15px 10px 15px;
   background-color: #2a3b4d;
@@ -145,4 +142,46 @@ code {
   color: white;
   font-weight: bold;
   border-radius: 5px;
+}
+
+b {
+  font-weight: bolder;
+}
+
+strong {
+  font-weight: bolder;
+}
+
+i {
+  font-style: italic;
+}
+
+em {
+  font-style: italic;
+}
+
+u {
+  text-decoration: underline;
+}
+
+code {
+  padding: 2px;
+  background-color: #444;
+  font-family: "Courier New", monospace;
+  border-radius: 5px;
+  border: 1px solid #666;
+}
+
+a {
+  text-decoration: none;
+  color: #666;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+a:hover {
+  text-decoration: none;
+  color: pink;
 }
